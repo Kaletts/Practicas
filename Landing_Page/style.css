@@ -1,6 +1,8 @@
 :root {
     --background-color: #1f2937;
     --button-color: #3882f6;
+    --transition-speed: 700ms;
+    --transition-speed-slow: 3000ms;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -8,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0;
+    animation: nav-img var(--transition-speed) ease-out;
 }
 
 ul {
@@ -17,6 +20,11 @@ ul {
 a {
     text-decoration: none;
     color: white;
+}
+
+img:hover {
+    animation: hover-icon 300ms;
+    animation-fill-mode: backwards;
 }
 
 header {
@@ -33,6 +41,7 @@ img {
     height: 200px;
     background-color: white;
     border-radius: 10%;
+    animation: nav-img var(--transition-speed-slow) ease-in-out;
 }
 
 .logo {
@@ -40,6 +49,7 @@ img {
     font-weight: 900;
     color: #f9faf8;
     margin: 20px;
+    margin-left: 0px;
 }
 
 .links-navigation > li {
@@ -176,3 +186,76 @@ img {
     height: 40px;
 }
 
+
+@keyframes nav-load {
+    0% {
+        transform:scale(0%);
+        transform:translateY(-100%);
+    }
+    75%{
+        transform:translateY(-50%);
+        transform:scale(90%)
+    }
+    100% {
+        transform:scale(100%);
+        transform:translateY(0%);
+    }
+}
+
+
+@keyframes section-load {
+    0% {
+        transform:translateX(-100%)
+    }
+    75%{
+        transform:translateX(-50%)
+    }
+    100% {
+        transform:translateX(0%)
+    }
+}
+
+@keyframes section-load-2 {
+    0% {
+        transform:translateX(+100%)
+    }
+    75%{
+        transform:translateX(+50%)
+    }
+    100% {
+        transform:translateX(0%)
+    }
+}
+
+@keyframes nav-li {
+    0% {
+        transform:translateY(-100%);
+    }
+    75%{
+        transform:translateY(-50%);
+    }
+    100% {
+        transform:translateY(0%);
+    }
+}
+
+@keyframes nav-img {
+    0% {
+        opacity: 0;
+    }
+    75%{
+        opacity: 50;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+@keyframes hover-icon {
+    0% {
+        transform:rotateX(0);
+    }
+    100% {
+        transform:rotateX(6);
+    }
+}

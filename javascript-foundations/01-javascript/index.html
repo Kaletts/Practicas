@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+    let message = "Hello"; //es posible declarar multiples variables seguidas 
+    let user = "John", age = 25;
+    let admin = "Javier";
+    let name = "Silvia";
+
+    name = user;
+    admin = name;
+    alert(admin);
+
+    let earth = "Tierra";
+    let currentVisitorName = "Pablo";
+    
+    console.log(message);
+    alert(message);
+
+    let plus = 100 + 50;
+    let firstNumber = 100;
+    let secondNumber = 50;
+    let plusVar = firstNumber + secondNumber;
+    /* +	Addition
+       -	Subtraction
+       *	Multiplication
+       **	Exponentiation (ES2016)
+       /	Division
+       %	Modulus (Remainder of division)
+       ++	Increment
+       --	Decrement */
+    alert(plusVar);
+    alert(plus);
+
+    //Javascript solo tiene un tipo de número, se puede escribir con o sin decimales.
+
+    let integer = 1;
+    let decimal = 2.5;
+    let bigNumber = 123e5;    // 12300000 - Notación cientifica
+    let smallNumber = 123e-5;   // 0.00123
+
+    //Las operaciones con decimales no son exactas.
+    let decimalError = 0.2 + 0.1; // 0.30000000000000004
+    //Esto se puede solucionar multiplicando por 10:
+    let decimalSolution = (0.2 * 10 + 0.1 * 10) / 10;
+    alert(decimalSolution);
+
+    /*Siempre prevalece string por encima de number
+    La suma de un number + string transforma todo en string
+    Siempre intenta convertir strings a números
+    ejemplo x = "100" / y = "10" va a transformar a 10 number.
+    en las sumas esto no funciona
+    */
+
+    //Para redondear un decimal "toFixed" y "Number" para string a number
+
+    let number1 = 10;
+    let number2 = 14;
+    let number3 = 4;
+    let number4 = 2;
+
+    firstResult = number1 + number2;
+    secondResult = number3 - number4;
+    finalResult = firstResult * secondResult;
+
+    //alert(23+97);
+    //alert(((4+6+9)/77));
+
+    const max = 57;
+    let actual = max - 13;
+    let percentage = actual / max;
+    percentage;
+
+    //tilde atras permite agregar ${VARIABLE} y unir o concadenarla
+    let name = "Kaled";
+    const greeting = `Hello, ${name}`;
+    const joined = `Hello, ${name}, ${number1}`;
+    alert(greeting);
+
+    //JavaScript has 8 types: 
+    //undefined, null, boolean, number, bigint, string, symbol, and object.
+    
+// || (OR), && (AND), ! (NOT), ?? (Nullish Coalescing)
+  </script>
+</body>
+</html>
