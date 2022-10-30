@@ -1,0 +1,126 @@
+:root {
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #131318;
+    --transition-speed: 300ms;
+    /*Estas propiedades que empiezan con doble --
+    se pueden usar en todas las clases de CSS, 
+    lo que permite cambiar solo una vez aca arriba
+    el color y se ajusta correctamente en todas 
+    las partes donde usamos estas declaraciones*/
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    /* esto permite modificar la scrollbar
+    seleccionando primero el objeto donde esta la misma
+    en este caso es el body */
+    width: 0, 35rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: orangered;
+}
+
+body::-webkit-scrollbar-track {
+    background: orange;
+}
+
+main {
+    margin-left: 5rem;
+    /*rem es una unidad relativa a la fuente declarada en el root*/
+    padding: 1rem;
+}
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    /*vh es una unidad relativa en relación a la vista de la ventana*/
+    position: fixed;
+    background-color: var(--bg-primary);
+    /*Aca usamos uno de los colores*/
+    transition: width 400ms ease; 
+    /*Transicion cambiando el ancho*/
+}
+
+.navbar-nav {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.navbar:hover {
+    /*Permite que cuando se pase el cursor 
+    por encima cambie una propiedad*/
+    width: 16rem;
+}
+
+.navbar:hover .link-text {
+    /*permite que cuando se pase el curso
+    muestre el texto por eso afecta dos clases*/
+    display: block
+}
+
+.fa-primary {
+    color: gold;
+}
+
+.fa-seconday {
+    color: goldenrod;
+}
+
+.fa-primary .fa-seconday {
+    transition: var(--transition-speed);
+}
+
+.logo-text
+{
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}

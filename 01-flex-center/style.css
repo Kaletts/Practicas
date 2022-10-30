@@ -1,0 +1,25 @@
+body {
+    height: 20rem;
+    width: 20rem;
+}
+
+section {
+    background-color: blue;
+    border-color: darkblue;
+    border: 20px;
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Center {
+    border: 90px red;
+    background-color: pink;
+    display: flex;
+    width: 5rem;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+}
