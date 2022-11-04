@@ -23,8 +23,7 @@ a {
 }
 
 img:hover {
-    animation: hover-icon 300ms;
-    animation-fill-mode: backwards;
+    border: 2px solid white;
 }
 
 header {
