@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sumar todo menos 0 y 10</title>
+</head>
+
+<body>
+    <div class="mainbody">
+        <div class="card">
+            <h1>Ingresa un número del 1 al 9</h1>
+            <input type="text" name="numberSelected" placeholder="Aca va el número" id="myInput">
+            <button class="addButton" onclick="sumarInput()">Sumar☝</button>
+            <h3>Historico de valores ingresados</h3>
+            <div data-final-column></div>
+            <script defer>
+                /*Constante para poder agregar los resultados debajo del boton como div*/
+                const columnaFinal = document.querySelector("[data-final-column]")
+                localStorage.setItem("realFinal", 0)
+
+                function sumarInput() {
+                    /*Asigno una variable que obtiene el valor del input luego de presionar el boton*/
+                    var number = document.getElementById("myInput").value
+                    var sum = 0
+                    /*Condición para omitir todo expecto numeros entre el 1 y el 9*/
+                    if (number <= 9 && number >= 1) {
+                        total = Number(sum) + Number(number)
+                        agregarResultado(total)
+                    } else {
+                        alert("Arruinaste mi programa, tu resultado final es" + " " + (localStorage.getItem("realFinal") + " " + "💀"))
+                    }
+                }
+                /*Funcion que simplemente toma un resultado y lo escribe generando un div debajo*/
+                function agregarResultado(totalSumado) {
+                    const divNuevo = document.createElement("div")
+                    divNuevo.classList.add("inputsOriginales")
+                    divNuevo.innerText = totalSumado
+                    columnaFinal.after(divNuevo)
+
+                    /*Luego de agregar el resultado en el html, guarda el valor que enviamos desde "sumarInput"*/
+                    x = localStorage.getItem("realFinal")
+                    y = Number(totalSumado) + Number(x)
+                    localStorage.setItem("realFinal", y)
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
